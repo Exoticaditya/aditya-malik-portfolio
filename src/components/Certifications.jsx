@@ -12,7 +12,7 @@ const Certifications = () => {
       file: javaDukeCert
     },
     {
-      title: "Databricks Lakehouse Fundamentals",
+      title: "Databricks Lakehouse AI Fundamentals",
       isExternal: true,
       externalLink: "https://credentials.databricks.com/b15f22ef-ada0-4325-bfb8-04c8772c9d94"
     },
