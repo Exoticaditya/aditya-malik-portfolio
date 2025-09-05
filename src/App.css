@@ -30,11 +30,15 @@ body {
   color: var(--text-primary);
   background: var(--primary-bg);
   overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   min-height: 100vh;
   background: var(--primary-bg);
+  width: 100%;
 }
 
 .container {

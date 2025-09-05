@@ -12,6 +12,11 @@ const Certifications = () => {
       file: javaDukeCert
     },
     {
+      title: "Databricks Lakehouse Fundamentals",
+      isExternal: true,
+      externalLink: "https://credentials.databricks.com/b15f22ef-ada0-4325-bfb8-04c8772c9d94"
+    },
+    {
       title: "Email Etiquette – TCS iON",
       file: emailEtiquetteCert
     },
@@ -36,18 +41,38 @@ const Certifications = () => {
         <div className="certifications-list">
           {certifications.map((cert, index) => (
             <div key={index} className="certification-item">
-              <span className="cert-icon">🏆</span>
               <div className="cert-content">
-                <p className="cert-title">{cert.title}</p>
-                <a 
-                  href={cert.file} 
-                  download 
-                  className="cert-download"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  📥 Download Certificate
-                </a>
+                <div className="cert-info">
+                  <h3 className="cert-title">{cert.title}</h3>
+                  <p className="cert-issuer">
+                    {cert.title.includes('Duke') ? 'Duke University' : 
+                     cert.title.includes('Databricks') ? 'Databricks' : 'TCS iON'}
+                  </p>
+                </div>
+                <div className="cert-actions">
+                  {cert.isExternal ? (
+                    <a 
+                      href={cert.externalLink} 
+                      className="download-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fas fa-external-link-alt"></i>
+                      View Certificate
+                    </a>
+                  ) : (
+                    <a 
+                      href={cert.file} 
+                      download 
+                      className="download-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fas fa-download"></i>
+                      Download PDF
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
