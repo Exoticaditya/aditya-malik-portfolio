@@ -8,12 +8,13 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f8f9fa;
+  color: var(--text-primary);
+  background-color: var(--primary-bg);
 }
 
 .App {
   min-height: 100vh;
+  background: var(--primary-bg);
 }
 
 .container {
@@ -26,7 +27,7 @@ body {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   position: relative;
 }
 
@@ -38,7 +39,7 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(45deg, #3498db, #2980b9);
+  background: linear-gradient(45deg, var(--accent-color), rgba(0, 255, 136, 0.6));
   border-radius: 2px;
 }
 
