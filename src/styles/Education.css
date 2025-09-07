@@ -1,134 +1,53 @@
 .education-section {
-  padding: 120px 0;
-  background: var(--primary-bg);
-  position: relative;
-}
-
-.education-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 40% 60%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
-  z-index: 1;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
 .education-content {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
 .education-item {
-  background: var(--card-bg);
-  padding: 2.5rem;
-  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 15px;
   margin-bottom: 2rem;
-  border: 1px solid var(--border-color);
-  position: relative;
-  transition: all 0.4s ease;
-  overflow: hidden;
-}
-
-.education-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-primary);
-}
-
-.education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-primary);
-  border-color: rgba(0, 255, 136, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .degree {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.degree::before {
-  content: '🎓';
-  font-size: 1.2rem;
 }
 
 .institution {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: var(--accent-color);
-  font-weight: 500;
+  opacity: 0.9;
 }
 
 .graduation {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.coursework {
-  background: rgba(0, 255, 136, 0.05);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border-left: 3px solid var(--accent-color);
+  opacity: 0.8;
 }
 
 .coursework h4 {
   font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  color: var(--text-primary);
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ecf0f1;
 }
 
 .coursework p {
-  line-height: 1.7;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-@media (max-width: 992px) {
-  .education-section {
-    padding: 80px 0;
-  }
-  
-  .education-item {
-    padding: 2rem;
-  }
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
-  .education-section {
-    padding: 70px 0;
-  }
-  
-  .education-item {
-    padding: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .degree {
-    font-size: 1.4rem;
-  }
-  
-  .coursework {
-    padding: 1.2rem;
-  }
-}
-
-@media (max-width: 576px) {
   .education-section {
     padding: 60px 0;
   }
@@ -139,57 +58,5 @@
   
   .degree {
     font-size: 1.3rem;
-  }
-  
-  .institution {
-    font-size: 1rem;
-  }
-  
-  .graduation {
-    font-size: 0.9rem;
-  }
-  
-  .coursework {
-    padding: 1rem;
-  }
-  
-  .coursework h4 {
-    font-size: 1rem;
-  }
-  
-  .coursework p {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .education-item {
-    padding: 1.2rem;
-  }
-  
-  .degree {
-    font-size: 1.2rem;
-  }
-  
-  .coursework {
-    padding: 0.8rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .education-item {
-    padding: 1rem;
-  }
-  
-  .degree {
-    font-size: 1.1rem;
-  }
-  
-  .institution {
-    font-size: 0.95rem;
-  }
-  
-  .graduation {
-    font-size: 0.85rem;
   }
 }

@@ -10,6 +10,10 @@ const Footer = () => {
             <div className="footer-brand">
               <h3>Aditya Malik</h3>
               <p>Java Full Stack Developer</p>
+              <p className="footer-description">
+                Passionate about creating scalable web solutions with modern technologies. 
+                Let's build something amazing together!
+              </p>
             </div>
             
             <div className="footer-links">
@@ -32,7 +36,7 @@ const Footer = () => {
                     <i className="fab fa-linkedin-in"></i>
                     <span>LinkedIn</span>
                   </a>
-                  <a href="https://github.com/aditya-malik-java" target="_blank" rel="noopener noreferrer" className="social-link github">
+                  <a href="https://github.com/Exoticaditya" target="_blank" rel="noopener noreferrer" className="social-link github">
                     <i className="fab fa-github"></i>
                     <span>GitHub</span>
                   </a>
@@ -44,16 +48,14 @@ const Footer = () => {
               </div>
               
               <div className="footer-section">
-                <h4>Get In Touch</h4>
-                <div className="contact-info">
-                  <a href="mailto:your.email@example.com" className="contact-item">
-                    <i className="fas fa-envelope"></i>
-                    <span>Email Me</span>
-                  </a>
-                  <a href="tel:+1234567890" className="contact-item">
-                    <i className="fas fa-phone"></i>
-                    <span>Call Me</span>
-                  </a>
+                <h4>Technologies</h4>
+                <div className="tech-list">
+                  <span className="tech-item">Java</span>
+                  <span className="tech-item">Spring Boot</span>
+                  <span className="tech-item">React.js</span>
+                  <span className="tech-item">PostgreSQL</span>
+                  <span className="tech-item">JavaScript</span>
+                  <span className="tech-item">Hibernate</span>
                 </div>
               </div>
             </div>
@@ -63,7 +65,9 @@ const Footer = () => {
             <div className="footer-divider"></div>
             <div className="footer-copyright">
               <p>&copy; {new Date().getFullYear()} Aditya Malik. All rights reserved.</p>
-              <p className="footer-tagline">Crafted with <i className="fas fa-heart"></i> and modern web technologies</p>
+              <p className="footer-tagline">
+                Crafted with <i className="fas fa-heart"></i> using React.js and modern web technologies
+              </p>
             </div>
           </div>
         </div>

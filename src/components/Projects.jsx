@@ -3,61 +3,62 @@ import '../styles/Projects.css'
 const Projects = () => {
   const projects = [
     {
-      title: "Zpluse.com",
-      subtitle: "Freelance Project | Full-Stack Business Management Website",
+      title: "ShopSphere",
+      subtitle: "Full-Stack E-Commerce Platform",
+      icon: "🌐",
       description: [
-        "Developed a full-stack business management website for a startup, including a public-facing site (www.zpluse.com) and an admin panel for business operations (www.zpluse.com/index).",
-        "Utilized HTML5, CSS3, and JavaScript for the front-end, crafting a responsive user interface designed for both customer and administrative use.",
-        "Engineered the back-end using Spring Boot to handle business logic, data processing, and user authentication, integrated with a PostgreSQL database.",
-        "Optimized the admin panel's performance to ensure efficient data retrieval and management for business users."
+        "Developed a responsive, full-stack e-commerce platform using React, HTML, CSS, and JavaScript, enabling smooth product browsing, cart management, and checkout.",
+        "Integrated with a Spring Boot backend to ensure efficient data handling and real-time updates.",
+        "Implemented user authentication, product search, and secure payment processing.",
+        "Optimized for performance and scalability with modern web technologies."
+      ],
+      technologies: ["React.js", "HTML5", "CSS3", "JavaScript", "Spring Boot"],
+      github: "https://github.com/Exoticaditya/Ecommerce-web-App",
+      live: null
+    },
+    {
+      title: "CommerceCore",
+      subtitle: "Backend System for E-Commerce",
+      icon: "⚙️",
+      description: [
+        "Engineered a robust backend with Spring Boot, Hibernate, and PostgreSQL, implementing RESTful APIs for authentication, catalog, and order management.",
+        "Ensured security with JWT, role-based access, and optimized database operations for scalability.",
+        "Developed comprehensive API documentation and testing suites.",
+        "Implemented advanced features like inventory management and analytics."
+      ],
+      technologies: ["Spring Boot", "Hibernate", "PostgreSQL", "JWT", "REST API"],
+      github: "https://github.com/Exoticaditya/aditya-ecommerce-backend",
+      live: null
+    },
+    {
+      title: "Z-Management",
+      subtitle: "Freelance Enterprise Management System",
+      icon: "💼",
+      description: [
+        "Delivered a custom enterprise management solution for a client firm, streamlining business workflows for their customers.",
+        "Developed backend services with Spring Boot and PostgreSQL, integrated frontend operations, and implemented data reporting and client-specific processes.",
+        "Created both public-facing website and comprehensive admin panel for business operations.",
+        "Optimized performance for efficient data retrieval and management for business users."
       ],
       technologies: ["HTML5", "CSS3", "JavaScript", "Spring Boot", "PostgreSQL"],
-      links: [
-        { text: "Live Demo", url: "https://www.zpluse.com" },
-        { text: "Admin Panel", url: "https://www.zpluse.com/index" }
-      ]
-    },
-    {
-      title: "Full-Stack Expense Tracker",
-      subtitle: "React, Next.js, Spring Boot, Hibernate",
-      description: [
-        "Developed responsive UI with Next.js/React; implemented decision-making and state logic.",
-        "Built REST API using Spring Boot and integrated Hibernate with database schemas.",
-        "Applied OOP and MVC design patterns; boosted data-fetch performance.",
-        "Implemented unit tests and designed modular, maintainable code structure."
-      ],
-      technologies: ["React.js", "Next.js", "Spring Boot", "Hibernate", "REST API"],
-      links: [
-        { text: "GitHub", url: "#" },
-        { text: "Demo", url: "#" }
-      ]
-    },
-    {
-      title: "Online Forum Platform",
-      subtitle: "Java EE: Servlets & JSP",
-      description: [
-        "Created login, posting, and commenting modules with session management.",
-        "Employed DAO and MVC architectural patterns; processed inputs via arrays/strings.",
-        "Ensured input validation, error handling, and code consistency."
-      ],
-      technologies: ["Java EE", "Servlets", "JSP", "DAO Pattern", "MVC"],
-      links: [
-        { text: "GitHub", url: "#" },
-        { text: "Documentation", url: "#" }
-      ]
+      github: "https://github.com/Exoticaditya/Z-Management",
+      live: "https://www.zpluse.com"
     }
   ]
 
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-header">
-                <h3 className="project-title">{project.title}</h3>
-                <h4 className="project-subtitle">{project.subtitle}</h4>
+                <div className="project-icon">{project.icon}</div>
+                <div className="project-info">
+                  <h3 className="project-title">{project.title}</h3>
+                  <h4 className="project-subtitle">{project.subtitle}</h4>
+                </div>
               </div>
               
               <div className="project-content">
@@ -75,17 +76,26 @@ const Projects = () => {
               </div>
               
               <div className="project-links">
-                {project.links.map((link, linkIndex) => (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="project-link"
+                >
+                  <i className="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                {project.live && (
                   <a 
-                    key={linkIndex} 
-                    href={link.url} 
-                    className="project-link"
-                    target={link.url.startsWith('http') ? '_blank' : '_self'}
-                    rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
+                    href={project.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-link live"
                   >
-                    {link.text}
+                    <i className="fas fa-external-link-alt"></i>
+                    <span>Live Demo</span>
                   </a>
-                ))}
+                )}
               </div>
             </div>
           ))}
