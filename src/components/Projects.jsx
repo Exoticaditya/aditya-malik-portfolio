@@ -3,7 +3,7 @@ import '../styles/Projects.css'
 const Projects = () => {
   const projects = [
     {
-      title: "ShopSphere",
+      title: "🌐 ShopSphere",
       subtitle: "Full-Stack E-Commerce Platform",
       icon: "🌐",
       description: [
@@ -17,7 +17,7 @@ const Projects = () => {
       live: null
     },
     {
-      title: "CommerceCore",
+      title: "⚙️ CommerceCore",
       subtitle: "Backend System for E-Commerce",
       icon: "⚙️",
       description: [
@@ -31,7 +31,7 @@ const Projects = () => {
       live: null
     },
     {
-      title: "Z-Management",
+      title: "💼 Z-Management",
       subtitle: "Freelance Enterprise Management System",
       icon: "💼",
       description: [

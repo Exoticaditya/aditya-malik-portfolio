@@ -15,25 +15,25 @@ const Footer = () => {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/aditya-malik-015520273/',
       icon: 'fab fa-linkedin-in',
-      color: '#0077b5'
+      color: '#00ff88'
     },
     {
       name: 'GitHub',
       url: 'https://github.com/Exoticaditya',
       icon: 'fab fa-github',
-      color: '#333'
+      color: '#00ff88'
     },
     {
       name: 'Instagram',
       url: 'https://instagram.com/_exoti.aditya_',
       icon: 'fab fa-instagram',
-      color: '#e4405f'
+      color: '#00ff88'
     },
     {
       name: 'Email',
       url: 'mailto:adityamalik2206950100018@gmail.com',
       icon: 'fas fa-envelope',
-      color: '#ea4335'
+      color: '#00ff88'
     }
   ];
 
@@ -52,136 +52,97 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="footer">
-      <div className="footer-background">
-        <div className="footer-grid"></div>
-        <div className="footer-glow"></div>
-      </div>
-      
+    <footer className="futuristic-footer">
       <div className="footer-container">
-        <div className="footer-content">
-          {/* Main Footer Content */}
-          <div className="footer-main">
-            {/* Brand Section */}
-            <div className="footer-brand">
-              <div className="brand-logo">
-                <div className="logo-icon">
-                  <span className="logo-text">AM</span>
-                  <div className="logo-pulse"></div>
-                </div>
-              </div>
-              <h3 className="brand-name">Aditya Malik</h3>
-              <p className="brand-title">Java Full Stack Developer</p>
-              <p className="brand-description">
-                Crafting next-generation web experiences with cutting-edge technologies. 
-                Passionate about clean code, scalable architecture, and innovative solutions.
-              </p>
-              <div className="brand-stats">
-                <div className="stat-item">
-                  <span className="stat-number">3+</span>
-                  <span className="stat-label">Projects</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">5+</span>
-                  <span className="stat-label">Technologies</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">2026</span>
-                  <span className="stat-label">Graduation</span>
-                </div>
+        {/* Main Horizontal Section */}
+        <div className="footer-main">
+          {/* Brand Section */}
+          <div className="footer-brand">
+            <div className="brand-logo">
+              <div className="hologram-circle">
+                <span className="brand-initials">AM</span>
+                <div className="rotating-ring"></div>
               </div>
             </div>
+            <h2 className="brand-name">Aditya Malik</h2>
+            <p className="brand-tagline">Java Full Stack Developer</p>
+          </div>
 
-            {/* Navigation & Contact */}
-            <div className="footer-nav">
-              <div className="nav-section">
-                <h4 className="nav-title">Navigate</h4>
-                <ul className="nav-list">
-                  {quickLinks.map((link, index) => (
-                    <li key={index} className="nav-item">
-                      <a 
-                        href={`#${link.id}`}
-                        onClick={(e) => handleSmoothScroll(e, link.id)}
-                        className="nav-link"
-                      >
-                        <span className="nav-icon">→</span>
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="nav-section">
-                <h4 className="nav-title">Technologies</h4>
-                <div className="tech-grid">
-                  {technologies.map((tech, index) => (
-                    <span key={index} className="tech-chip">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="nav-section">
-                <h4 className="nav-title">Connect</h4>
-                <div className="social-grid">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-card"
-                      style={{'--social-color': social.color}}
-                    >
-                      <div className="social-icon">
-                        <i className={social.icon}></i>
-                      </div>
-                      <span className="social-name">{social.name}</span>
-                      <div className="social-glow"></div>
-                    </a>
-                  ))}
-                </div>
-              </div>
+          {/* Navigation Links */}
+          <div className="footer-nav">
+            <h3 className="nav-title">Quick Navigation</h3>
+            <div className="nav-links">
+              {quickLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={`#${link.id}`}
+                  onClick={(e) => handleSmoothScroll(e, link.id)}
+                  className="nav-link"
+                >
+                  <span className="link-text">{link.name}</span>
+                  <div className="link-hover-effect"></div>
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Footer Bottom */}
-          <div className="footer-bottom">
-            <div className="footer-divider">
-              <div className="divider-line"></div>
-              <div className="divider-glow"></div>
+          {/* Technologies */}
+          <div className="footer-tech">
+            <h3 className="tech-title">Tech Stack</h3>
+            <div className="tech-items">
+              {technologies.map((tech, index) => (
+                <span key={index} className="tech-badge">
+                  {tech}
+                </span>
+              ))}
             </div>
-            
-            <div className="footer-copyright">
-              <div className="copyright-content">
-                <div className="copyright-text">
-                  <span className="year">{new Date().getFullYear()}</span>
-                  <span className="separator">•</span>
-                  <span className="name">Aditya Malik</span>
-                  <span className="separator">•</span>
-                  <span className="rights">All rights reserved</span>
-                </div>
-                <div className="made-with">
-                  <span>Engineered with</span>
-                  <div className="heart-container">
-                    <i className="fas fa-heart heart-icon"></i>
-                  </div>
-                  <span>using React.js & modern web technologies</span>
-                </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="footer-social">
+            <h3 className="social-title">Connect</h3>
+            <div className="social-links">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                  title={social.name}
+                >
+                  <i className={social.icon}></i>
+                  <div className="social-glow"></div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="holographic-line"></div>
+          <div className="footer-credits">
+            <div className="copyright">
+              <span className="year">{new Date().getFullYear()}</span>
+              <span className="separator">•</span>
+              <span className="name">Aditya Malik</span>
+              <span className="separator">•</span>
+              <span className="rights">All Rights Reserved</span>
+            </div>
+            <div className="made-with">
+              <span>Crafted with</span>
+              <div className="heart-pulse">
+                <i className="fas fa-heart"></i>
               </div>
-              
-              <div className="footer-signature">
-                <div className="signature-line"></div>
-                <span className="signature-text">// End of transmission</span>
-              </div>
+              <span>& Future Tech</span>
             </div>
           </div>
         </div>
       </div>
     </footer>
   );
+};
 };
 
 export default Footer;
