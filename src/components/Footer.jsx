@@ -48,7 +48,7 @@ const Footer = () => {
 
   const technologies = [
     'Java', 'Spring Boot', 'React.js', 'PostgreSQL', 
-    'JavaScript', 'Hibernate', 'HTML5', 'CSS3'
+    'JavaScript', 'Hibernate', 'HTML5', 'CSS3', 'Git', 'Maven'
   ];
 
   return (
@@ -135,7 +135,7 @@ const Footer = () => {
               <div className="heart-pulse">
                 <i className="fas fa-heart"></i>
               </div>
-              <span>& Future Tech</span>
+              <span>& Future Tech • Built with React & Vite</span>
             </div>
           </div>
         </div>
