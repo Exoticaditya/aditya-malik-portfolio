@@ -1,7 +1,7 @@
 /* Futuristic About/Hero Section */
 .about-section {
   min-height: 100vh;
-  padding: 60px 0;
+  padding: var(--section-padding);
   background: var(--primary-bg);
   display: flex;
   align-items: center;
@@ -17,14 +17,18 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 25% 25%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, var(--accent-glow) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(0, 255, 136, 0.02) 0%, transparent 100%);
   pointer-events: none;
 }
 
 .container {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--container-padding);
 }
 
 .hero-section {
@@ -52,15 +56,15 @@
 
 .profile-image-wrapper {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
 }
 
 .hexagon-frame {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: rotate(0deg);
 }
 
 .hexagon-inner {
@@ -68,7 +72,7 @@
   width: 100%;
   height: 100%;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.3));
+  background: linear-gradient(135deg, #00ff88, rgba(0, 255, 136, 0.3));
   padding: 3px;
   display: flex;
   align-items: center;
@@ -76,26 +80,28 @@
 }
 
 .profile-image {
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
 }
 
 .profile-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .hexagon-border {
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.5), transparent);
+  background: linear-gradient(45deg, transparent, #00ff88, transparent);
   animation: rotate-border 4s linear infinite;
+  z-index: -1;
 }
 
 @keyframes rotate-border {
@@ -106,14 +112,14 @@
 .glow-effect {
   position: absolute;
   inset: -20px;
-  background: radial-gradient(circle, rgba(0, 255, 136, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.3) 0%, transparent 70%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   animation: pulse-glow 2s ease-in-out infinite alternate;
-  z-index: -1;
+  z-index: -2;
 }
 
 @keyframes pulse-glow {
-  0% { opacity: 0.3; transform: scale(1); }
+  0% { opacity: 0.5; transform: scale(1); }
   100% { opacity: 0.8; transform: scale(1.1); }
 }
 
@@ -259,7 +265,77 @@
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 600px;
-  margin: 20px 0;
+  margin: 20px 0 30px;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.location-icon {
+  color: var(--accent-color);
+}
+
+.contact-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 25px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-btn:hover::before {
+  left: 100%;
+}
+
+.contact-btn:hover {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: rgba(0, 255, 136, 0.6);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(0, 255, 136, 0.2);
+}
+
+.contact-icon {
+  font-size: 1.1rem;
 }
 
 /* Responsive Design */

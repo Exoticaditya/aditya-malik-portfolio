@@ -3,6 +3,20 @@ import '../styles/Projects.css'
 const Projects = () => {
   const projects = [
     {
+      title: "💼 Z-Management",
+      subtitle: "Freelance Enterprise Management System",
+      icon: "💼",
+      description: [
+        "Delivered a custom enterprise management solution for a client firm, streamlining business workflows for their customers.",
+        "Developed backend services with Spring Boot and PostgreSQL, integrated frontend operations, and implemented data reporting and client-specific processes.",
+        "Created both public-facing website and comprehensive admin panel for business operations.",
+        "Optimized performance for efficient data retrieval and management for business users."
+      ],
+      technologies: ["HTML5", "CSS3", "JavaScript", "Spring Boot", "PostgreSQL"],
+      github: "https://github.com/Exoticaditya/Z-Management",
+      live: "https://www.zpluse.com"
+    },
+    {
       title: "🌐 ShopSphere",
       subtitle: "Full-Stack E-Commerce Platform",
       icon: "🌐",
@@ -29,20 +43,6 @@ const Projects = () => {
       technologies: ["Spring Boot", "Hibernate", "PostgreSQL", "JWT", "REST API"],
       github: "https://github.com/Exoticaditya/aditya-ecommerce-backend",
       live: null
-    },
-    {
-      title: "💼 Z-Management",
-      subtitle: "Freelance Enterprise Management System",
-      icon: "💼",
-      description: [
-        "Delivered a custom enterprise management solution for a client firm, streamlining business workflows for their customers.",
-        "Developed backend services with Spring Boot and PostgreSQL, integrated frontend operations, and implemented data reporting and client-specific processes.",
-        "Created both public-facing website and comprehensive admin panel for business operations.",
-        "Optimized performance for efficient data retrieval and management for business users."
-      ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Spring Boot", "PostgreSQL"],
-      github: "https://github.com/Exoticaditya/Z-Management",
-      live: "https://www.zpluse.com"
     }
   ]
 
@@ -80,9 +80,9 @@ const Projects = () => {
                   href={project.github} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="project-link"
+                  className="project-link github-link"
                 >
-                  <i className="fab fa-github"></i>
+                  <span className="link-icon">🐙</span>
                   <span>GitHub</span>
                 </a>
                 {project.live && (
@@ -90,9 +90,9 @@ const Projects = () => {
                     href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="project-link live"
+                    className="project-link live-link"
                   >
-                    <i className="fas fa-external-link-alt"></i>
+                    <span className="link-icon">🚀</span>
                     <span>Live Demo</span>
                   </a>
                 )}

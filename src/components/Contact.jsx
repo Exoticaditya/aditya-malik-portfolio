@@ -3,32 +3,32 @@ import '../styles/Contact.css'
 const Contact = () => {
   const contactMethods = [
     {
-      icon: 'fas fa-envelope',
+      icon: '✉️',
       label: 'Email',
       value: 'Send Message',
       href: 'mailto:adityamalik2206950100018@gmail.com',
-      color: '#ea4335'
+      color: '#00ff88'
     },
     {
-      icon: 'fab fa-linkedin-in',
+      icon: '💼',
       label: 'LinkedIn',
       value: 'Connect',
       href: 'https://www.linkedin.com/in/aditya-malik-015520273/',
-      color: '#0077b5'
+      color: '#00ff88'
     },
     {
-      icon: 'fas fa-phone',
+      icon: '📱',
       label: 'Phone',
       value: 'Call Now',
       href: 'tel:+917417992490',
-      color: '#25d366'
+      color: '#00ff88'
     },
     {
-      icon: 'fab fa-github',
+      icon: '🐙',
       label: 'GitHub',
       value: 'View Profile',
       href: 'https://github.com/Exoticaditya',
-      color: '#333'
+      color: '#00ff88'
     }
   ];
 
@@ -72,7 +72,7 @@ const Contact = () => {
                 style={{'--method-color': method.color}}
               >
                 <div className="card-icon">
-                  <i className={method.icon}></i>
+                  <span className="emoji-icon">{method.icon}</span>
                   <div className="icon-glow"></div>
                 </div>
                 <div className="card-content">
@@ -80,7 +80,7 @@ const Contact = () => {
                   <p className="card-value">{method.value}</p>
                 </div>
                 <div className="card-arrow">
-                  <i className="fas fa-arrow-right"></i>
+                  <span className="arrow-emoji">→</span>
                 </div>
                 <div className="card-hover-effect"></div>
               </a>
@@ -93,7 +93,7 @@ const Contact = () => {
               <span className="status-text">Available for new opportunities</span>
             </div>
             <div className="response-time">
-              <i className="fas fa-clock"></i>
+              <span className="clock-emoji">🕒</span>
               <span>Typically responds within 24 hours</span>
             </div>
           </div>

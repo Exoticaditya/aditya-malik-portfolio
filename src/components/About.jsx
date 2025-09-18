@@ -56,9 +56,32 @@ const About = () => {
                 <h2 className="role-title">Java Full Stack Developer</h2>
               </div>
               <p className="hero-description">
-                Passionate developer crafting scalable web solutions with modern technologies. 
-                Specialized in Java, Spring Boot, and React.js with a keen eye for clean code and user experience.
+                Passionate Java Full Stack Developer with professional training from Ducat India. 
+                Specialized in Java, Spring Boot, and React.js with hands-on experience in building 
+                scalable web solutions and modern applications.
               </p>
+              
+              {/* Contact Information */}
+              <div className="contact-section">
+                <div className="location-info">
+                  <span className="location-icon">📍</span>
+                  <span className="location-text">Noida, India</span>
+                </div>
+                <div className="contact-links">
+                  <a href="tel:+917417992490" className="contact-btn">
+                    <span className="contact-icon">📞</span>
+                    <span>+91 7417992490</span>
+                  </a>
+                  <a href="mailto:adityamalik2206950100018@gmail.com" className="contact-btn">
+                    <span className="contact-icon">✉️</span>
+                    <span>Email</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/aditya-malik-015520273/" target="_blank" rel="noopener noreferrer" className="contact-btn">
+                    <span className="contact-icon">💼</span>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
