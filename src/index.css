@@ -1,52 +1,148 @@
-:root {
-  /* Color System */
-  --primary-bg: #0a0a0a;
-  --secondary-bg: #1a1a1a;
-  --card-bg: rgba(26, 26, 26, 0.9);
-  --accent-color: #00ff88;
-  --accent-glow: rgba(0, 255, 136, 0.3);
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.8);
-  --text-muted: rgba(255, 255, 255, 0.6);
-  --border-color: rgba(0, 255, 136, 0.2);
-  --hover-glow: rgba(0, 255, 136, 0.1);
-  
-  /* Typography */
-  --font-primary: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  
-  /* Spacing */
-  --section-padding: 80px 0;
-  --container-padding: 0 20px;
-  --border-radius: 12px;
-  --border-radius-large: 20px;
-  
-  /* Shadows */
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 30px rgba(0, 255, 136, 0.2);
-  --shadow-strong: 0 10px 40px rgba(0, 0, 0, 0.4);
+/* =================================================================
+   MAIN.CSS - Portfolio Entry Point
+   ================================================================= */
 
-  color-scheme: dark;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* Import Foundation CSS */
+@import './styles/variables.css';
+@import './styles/reset.css';
+@import './styles/utilities.css';
+
+/* =================================================================
+   GLOBAL STYLES
+   ================================================================= */
+
+/* Root element styling */
+#root {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* App container */
+.App {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Global background effects */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, var(--glow-soft) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--glow-soft) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for the entire page */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-secondary);
+}
+
+/* =================================================================
+   COMMON SECTION STYLING
+   ================================================================= */
+
+/* Base section styling */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section title styling */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
   color: var(--text-primary);
-  background-color: var(--primary-bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin-bottom: var(--space-12);
+  position: relative;
 }
 
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+}
+
+/* Section subtitle */
+.section-subtitle {
+  font-size: var(--text-xl);
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--leading-relaxed);
+}
+
+/* =================================================================
+   RESPONSIVE TYPOGRAPHY
+   ================================================================= */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-8);
+  }
+  
+  .section-subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+  }
+  
+  .section-subtitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* =================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ================================================================= */
+
+/* Enable hardware acceleration for animations */
+.animate-slide-up,
+.animate-slide-right,
+.animate-fade-in,
+.hover-lift {
+  will-change: transform, opacity;
+}
+
+/* Optimize rendering */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  font-weight: 500;
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 a:hover {
