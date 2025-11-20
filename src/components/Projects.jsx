@@ -80,9 +80,9 @@ const Projects = () => {
                   href={project.github} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="project-link github-link"
+                  className="project-link"
                 >
-                  <span className="link-icon">🐙</span>
+                  <i className="fab fa-github"></i>
                   <span>GitHub</span>
                 </a>
                 {project.live && (
@@ -90,9 +90,9 @@ const Projects = () => {
                     href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="project-link live-link"
+                    className="project-link live"
                   >
-                    <span className="link-icon">🚀</span>
+                    <i className="fas fa-external-link-alt"></i>
                     <span>Live Demo</span>
                   </a>
                 )}

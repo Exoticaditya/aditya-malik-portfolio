@@ -1,5 +1,6 @@
 import '../styles/About.css'
 import profilePhoto from '../assets/profile-photo.png'
+// import resumeFile from '../assets/Aditya-malik-cse (2).pdf' // Add this file to assets folder
 
 const About = () => {
   return (
@@ -56,9 +57,8 @@ const About = () => {
                 <h2 className="role-title">Java Full Stack Developer</h2>
               </div>
               <p className="hero-description">
-                Passionate Java Full Stack Developer with professional training from Ducat India. 
-                Specialized in Java, Spring Boot, and React.js with hands-on experience in building 
-                scalable web solutions and modern applications.
+                Passionate developer crafting scalable web solutions with modern technologies. 
+                Specialized in Java, Spring Boot, and React.js with a keen eye for clean code and user experience.
               </p>
               
               {/* Contact Information */}
@@ -80,6 +80,11 @@ const About = () => {
                     <span className="contact-icon">💼</span>
                     <span>LinkedIn</span>
                   </a>
+                  {/* Resume download will be enabled once you add the PDF file to assets folder */}
+                  {/* <a href={resumeFile} download="Aditya-Malik-Resume.pdf" className="resume-btn">
+                    <span className="resume-icon">📄</span>
+                    <span>Download Resume</span>
+                  </a> */}
                 </div>
               </div>
             </div>

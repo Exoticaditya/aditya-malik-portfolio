@@ -12,11 +12,6 @@ const Certifications = () => {
       file: javaDukeCert
     },
     {
-      title: "Generative AI Fundamentals – Google Cloud/Coursera",
-      file: null, // Add your certificate PDF file to assets folder
-      placeholder: true
-    },
-    {
       title: "Email Etiquette – TCS iON",
       file: emailEtiquetteCert
     },
@@ -44,21 +39,15 @@ const Certifications = () => {
               <span className="cert-icon">🏆</span>
               <div className="cert-content">
                 <p className="cert-title">{cert.title}</p>
-                {cert.file ? (
-                  <a 
-                    href={cert.file} 
-                    download 
-                    className="cert-download"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    📥 Download Certificate
-                  </a>
-                ) : (
-                  <span className="cert-pending">
-                    📋 Certificate Available
-                  </span>
-                )}
+                <a 
+                  href={cert.file} 
+                  download 
+                  className="cert-download"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  📥 Download Certificate
+                </a>
               </div>
             </div>
           ))}

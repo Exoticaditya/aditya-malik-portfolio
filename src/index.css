@@ -2,18 +2,29 @@
   /* Color System */
   --primary-bg: #0a0a0a;
   --secondary-bg: #1a1a1a;
-  --card-bg: rgba(26, 26, 26, 0.8);
+  --card-bg: rgba(26, 26, 26, 0.9);
   --accent-color: #00ff88;
+  --accent-glow: rgba(0, 255, 136, 0.3);
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.8);
   --text-muted: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(0, 255, 136, 0.2);
+  --hover-glow: rgba(0, 255, 136, 0.1);
   
   /* Typography */
   --font-primary: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   
   /* Spacing */
   --section-padding: 80px 0;
   --container-padding: 0 20px;
+  --border-radius: 12px;
+  --border-radius-large: 20px;
+  
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 30px rgba(0, 255, 136, 0.2);
+  --shadow-strong: 0 10px 40px rgba(0, 0, 0, 0.4);
 
   color-scheme: dark;
   color: var(--text-primary);

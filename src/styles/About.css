@@ -56,8 +56,8 @@
 
 .profile-image-wrapper {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
 }
 
@@ -65,6 +65,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  transform: rotate(0deg);
 }
 
 .hexagon-inner {
@@ -72,36 +73,36 @@
   width: 100%;
   height: 100%;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: linear-gradient(135deg, #00ff88, rgba(0, 255, 136, 0.3));
-  padding: 3px;
+  background: linear-gradient(135deg, var(--accent-glow), rgba(0, 255, 136, 0.4));
+  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .profile-image {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
   object-fit: cover;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  transition: all 0.3s ease;
-  border: none;
+  transition: all 0.4s ease;
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .profile-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
+  filter: brightness(1.2) contrast(1.2);
 }
 
 .hexagon-border {
   position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: linear-gradient(45deg, transparent, #00ff88, transparent);
-  animation: rotate-border 4s linear infinite;
-  z-index: -1;
+  background: linear-gradient(45deg, transparent, var(--accent-color), transparent);
+  animation: rotate-border 6s linear infinite;
 }
 
 @keyframes rotate-border {
@@ -111,16 +112,16 @@
 
 .glow-effect {
   position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(0, 255, 136, 0.3) 0%, transparent 70%);
+  inset: -25px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  animation: pulse-glow 2s ease-in-out infinite alternate;
-  z-index: -2;
+  animation: pulse-glow 3s ease-in-out infinite alternate;
+  z-index: -1;
 }
 
 @keyframes pulse-glow {
-  0% { opacity: 0.5; transform: scale(1); }
-  100% { opacity: 0.8; transform: scale(1.1); }
+  0% { opacity: 0.4; transform: scale(1); }
+  100% { opacity: 0.8; transform: scale(1.15); }
 }
 
 /* Stats Container */
@@ -128,12 +129,13 @@
   display: flex;
   align-items: center;
   gap: 0;
-  background: rgba(0, 255, 136, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 255, 136, 0.2);
-  border-radius: 50px;
-  padding: 20px 40px;
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-large);
+  padding: 25px 45px;
   position: relative;
+  box-shadow: var(--shadow-glow);
 }
 
 .stats-container::before {
@@ -143,9 +145,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
-  border-radius: 50px;
-  animation: scan-stats 3s linear infinite;
+  background: linear-gradient(90deg, transparent, var(--hover-glow), transparent);
+  border-radius: var(--border-radius-large);
+  animation: scan-stats 4s linear infinite;
 }
 
 @keyframes scan-stats {
@@ -332,6 +334,46 @@
   color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(0, 255, 136, 0.2);
+}
+
+.resume-btn {
+  background: linear-gradient(135deg, #00ff88, #00cc7a) !important;
+  color: #000000 !important;
+  font-weight: 600;
+  border: 2px solid #00ff88 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.resume-btn:hover::before {
+  left: 100%;
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+  border-color: #ffffff !important;
+}
+
+.resume-btn .contact-icon {
+  color: #000000 !important;
+}
+
+.resume-btn span {
+  color: #000000 !important;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-icon {
