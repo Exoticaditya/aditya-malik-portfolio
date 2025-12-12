@@ -25,6 +25,30 @@
   padding: var(--section-padding-sm);
 }
 
+/* Section Title */
+.section-title {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-bold);
+  text-align: center;
+  margin-bottom: var(--space-16);
+  color: var(--text-primary);
+  position: relative;
+  font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+}
+
 /* ===== FLEXBOX UTILITIES ===== */
 
 .flex { display: flex; }

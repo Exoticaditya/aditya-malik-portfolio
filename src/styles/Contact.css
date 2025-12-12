@@ -1,338 +1,131 @@
-/* =================================================================
-   CONTACT SECTION - Modern Glass Design
-   ================================================================= */
-
+/* Contact.css */
 .contact-section {
-  padding: var(--section-padding);
-  background: var(--bg-primary);
   position: relative;
-  z-index: 1;
+  padding-bottom: var(--space-32);
 }
 
-/* Background Effects */
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 30% 20%, var(--glow-soft) 0%, transparent 60%),
-    radial-gradient(circle at 70% 80%, var(--glow-soft) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-/* =================================================================
-   CONTACT HEADER
-   ================================================================= */
-
-.contact-header {
-  text-align: center;
-  margin-bottom: var(--space-16);
-}
-
-.header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: var(--border-thin) solid var(--glass-border);
-  border-radius: var(--radius-full);
-  padding: var(--space-3) var(--space-6);
-  margin-bottom: var(--space-8);
-  transition: var(--transition-normal);
-}
-
-.header-badge:hover {
-  background: var(--glow-soft);
-  box-shadow: var(--glow-sm);
-}
-
-.badge-icon {
-  font-size: var(--text-xl);
-}
-
-.badge-text {
-  color: var(--accent-primary);
-  font-weight: var(--font-semibold);
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.contact-title {
-  font-size: var(--text-5xl);
-  font-weight: var(--font-black);
-  color: var(--text-primary);
-  margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-  font-family: var(--font-heading);
-}
-
-.title-highlight {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.contact-description {
-  font-size: var(--text-lg);
-  color: var(--text-secondary);
-  line-height: var(--leading-relaxed);
-  max-width: 600px;
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* =================================================================
-   CONTACT METHODS GRID
-   ================================================================= */
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-xl);
+}
 
-.contact-methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-6);
-  margin-bottom: var(--space-16);
-  max-width: 900px;
+.contact-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.contact-text {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.contact-card {
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.contact-item {
   display: flex;
   align-items: center;
-  gap: var(--space-5);
-  padding: var(--space-6);
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: var(--border-thin) solid var(--glass-border);
-  border-radius: var(--radius-2xl);
+  gap: var(--space-4);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
   text-decoration: none;
-  transition: var(--transition-normal);
-  cursor: pointer;
-  position: relative;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.contact-item .icon {
+  font-size: 1.5rem;
+  background: rgba(0, 255, 157, 0.1);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.contact-item .details {
+  text-align: left;
   overflow: hidden;
 }
 
-.contact-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transition: transform var(--duration-300) var(--ease-out);
-}
-
-.contact-card:hover::before {
-  transform: scaleX(1);
-}
-
-.contact-card:hover {
-  background: var(--glow-soft);
-  border-color: var(--accent-primary);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl), var(--glow-md);
-}
-
-/* =================================================================
-   CARD CONTENT
-   ================================================================= */
-
-.card-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-2xl);
-  flex-shrink: 0;
-  transition: var(--transition-normal);
-  color: var(--bg-primary);
-  font-weight: var(--font-semibold);
-}
-
-.contact-card:hover .card-icon {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: var(--glow-sm);
-}
-
-.card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  min-width: 0;
-}
-
-.card-label {
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: var(--text-primary);
-  margin: 0;
-  line-height: var(--leading-tight);
-  font-family: var(--font-heading);
-}
-
-.card-value {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: var(--leading-normal);
-  transition: var(--transition-normal);
-}
-
-.contact-card:hover .card-value {
-  color: var(--accent-primary);
-}
-
-.card-arrow {
-  width: 40px;
-  height: 40px;
-  background: var(--glow-soft);
-  border: var(--border-thin) solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-lg);
-  color: var(--text-muted);
-  transition: var(--transition-normal);
-  flex-shrink: 0;
-}
-
-.contact-card:hover .card-arrow {
-  background: var(--accent-primary);
-  color: var(--bg-primary);
-  transform: translateX(4px);
-  border-color: var(--accent-primary);
-}
-
-/* =================================================================
-   CONTACT FOOTER
-   ================================================================= */
-
-.contact-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-12);
-  flex-wrap: wrap;
-}
-
-.availability-indicator {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-6);
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: var(--border-thin) solid var(--glass-border);
-  border-radius: var(--radius-full);
-  transition: var(--transition-normal);
-}
-
-.availability-indicator:hover {
-  background: var(--glow-soft);
-  box-shadow: var(--glow-sm);
-}
-
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: var(--radius-full);
-  background: var(--accent-primary);
-  animation: pulse var(--duration-1000) ease-in-out infinite;
-  box-shadow: 0 0 10px var(--accent-primary);
-}
-
-.status-text {
-  color: var(--accent-primary);
-  font-weight: var(--font-semibold);
-  font-size: var(--text-sm);
+.contact-item .label {
+  display: block;
+  font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.response-time {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
+  letter-spacing: 1px;
   color: var(--text-muted);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
+  margin-bottom: 2px;
 }
 
-/* =================================================================
-   RESPONSIVE DESIGN
-   ================================================================= */
+.contact-item .value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.btn-primary-glow {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+}
+
+.btn-primary-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 255, 157, 0.6);
+  filter: brightness(1.1);
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .contact-card {
+    padding: var(--space-6);
+  }
+
   .contact-methods {
     grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-  
-  .contact-card {
-    padding: var(--space-4);
-    gap: var(--space-4);
-  }
-  
-  .card-icon {
-    width: 50px;
-    height: 50px;
-    font-size: var(--text-xl);
-  }
-  
-  .card-label {
-    font-size: var(--text-lg);
-  }
-  
-  .card-value {
-    font-size: var(--text-sm);
-  }
-  
-  .contact-footer {
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-  
-  .contact-title {
-    font-size: var(--text-4xl);
-  }
-  
-  .contact-description {
-    font-size: var(--text-base);
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-card {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-3);
-    padding: var(--space-4);
-  }
-  
-  .card-arrow {
-    display: none;
-  }
-  
-  .contact-title {
-    font-size: var(--text-3xl);
-  }
-  
-  .header-badge {
-    padding: var(--space-2) var(--space-4);
-  }
-  
-  .badge-text {
-    font-size: var(--text-xs);
   }
 }

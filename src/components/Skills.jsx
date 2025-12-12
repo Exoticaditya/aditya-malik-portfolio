@@ -1,40 +1,40 @@
-import '../styles/Skills.css'
+import React from 'react';
+import '../styles/Skills.css';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Languages & Web",
-      skills: ["Java", "JavaScript (ES6+)", "HTML5", "CSS3"]
+      title: "Frontend Core",
+      icon: "🎨",
+      skills: ["HTML5", "CSS3", "JavaScript", "React.js", "Redux", "Tailwind"]
     },
     {
-      title: "Front-End",
-      skills: ["React.js", "Next.js", "Advanced JS", "Decision-making Logic"]
+      title: "Backend Core",
+      icon: "⚡",
+      skills: ["Java", "Spring Boot", "Hibernate", "Microservices", "REST APIs"]
     },
     {
-      title: "Back-End",
-      skills: ["Java EE", "Spring", "Spring Boot", "Hibernate", "RESTful APIs"]
-    },
-    {
-      title: "Core Concepts",
-      skills: ["OOP (PIE)", "Arrays", "Strings", "Web Programming"]
-    },
-    {
-      title: "Tools & Methodologies",
-      skills: ["Git", "Maven/Gradle", "SQL", "Agile (Scrum)", "Unit Testing (JUnit)"]
+      title: "Database & Tools",
+      icon: "💾",
+      skills: ["MySQL", "PostgreSQL", "MongoDB", "Git", "Docker", "Postman"]
     }
-  ]
+  ];
 
   return (
     <section id="skills" className="skills-section">
       <div className="container">
-        <h2 className="section-title">Technical Skills</h2>
+        <h2 className="section-title">Technical <span className="highlight">Arsenal</span></h2>
+
         <div className="skills-grid">
           {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category">
-              <h3 className="category-title">{category.title}</h3>
-              <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="skill-tag">{skill}</span>
+            <div key={index} className="skill-category-card">
+              <div className="category-header">
+                <span className="category-icon">{category.icon}</span>
+                <h3 className="category-title">{category.title}</h3>
+              </div>
+              <div className="skill-tags">
+                {category.skills.map((skill, i) => (
+                  <span key={i} className="skill-tag">{skill}</span>
                 ))}
               </div>
             </div>
